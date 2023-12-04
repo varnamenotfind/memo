@@ -43,9 +43,6 @@
     </style>
   </head>
   <body>
-    <audio autoplay="autopaly">
-      <source src="/music/天使.mp3" type="audio/mp3" />
-    </audio>
     <div id="main">
       <div id="wrap">
         <div id="text">
@@ -72,24 +69,17 @@
           <span class="STYLE1"></span>
           <div id="clock"></div>
         </div>
-        <canvas id="canvas" width="1100" height="680"></canvas>
+        <canvas id="canvas" width="1100" height="680" onclick="playAudio()"></canvas>
       </div>
+      <audio id="myAudio" src="./music/天使.mp3"></audio>
     </div>
-
-    <script></script>
-    <script type="text/javascript">
-      window.onload = function () {
-        setInterval("toggleSound()", 1);
-      };
-      function toggleSound() {
-        var music = document.getElementById("music"); //获取ID
-        if (music.paused) {
-          //判读是否播放
-          music.paused = false;
-          music.play(); //没有就播放
-        }
+    <script>
+      var audio = document.getElementById("myAudio");
+      function playAudio() {
+        audio.play();
       }
     </script>
+    <script></script>
 
     <script>
       (function () {
